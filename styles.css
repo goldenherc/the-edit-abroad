@@ -1,0 +1,312 @@
+/* The Edit Abroad — shared design tokens */
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #fafaf7;
+  --bg-2: #f3f1ea;
+  --bg-3: #ecead9;
+  --ink: #0f0f0f;
+  --ink-2: #3a3a3a;
+  --ink-3: #6b6b65;
+  --mute: #9b9b95;
+  --line: #cfcec8;
+  --line-soft: #e6e3da;
+
+  /* Brand gold — drawn from the product cover compass / eyebrow */
+  --gold: #b8964a;
+  --gold-soft: #d4b878;
+
+  --serif: 'Bodoni Moda', 'Didot', 'Bodoni 72', 'Times New Roman', serif;
+  --serif-body: 'EB Garamond', 'Garamond', 'Hoefler Text', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.tea-page {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+}
+
+.tea-page * { box-sizing: border-box; }
+
+/* — Type primitives — */
+.tea-display {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+.tea-display-roman {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+.tea-body {
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.tea-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.tea-eyebrow-mute { color: var(--mute); }
+.tea-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.tea-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+.tea-mono {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+}
+
+/* — Nav — */
+.tea-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 56px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.tea-nav-wordmark {
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.tea-nav-wordmark em { font-style: italic; font-weight: 500; }
+.tea-nav-wordmark span {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  font-weight: 500;
+  margin-left: 6px;
+  vertical-align: 2px;
+}
+.tea-nav-links {
+  display: flex;
+  gap: 36px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+}
+.tea-nav-links a { color: inherit; text-decoration: none; }
+.tea-nav-utility {
+  display: flex; gap: 18px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+/* — Buttons & links — */
+.tea-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.tea-btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.tea-link {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--ink);
+}
+
+/* — Image placeholders — */
+.tea-img {
+  position: relative;
+  background-color: #d8d3c6;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,0.10) 0,
+      rgba(255,255,255,0.10) 1px,
+      transparent 1px,
+      transparent 9px);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.tea-img.cool { background-color: #b9c2c2; }
+.tea-img.warm { background-color: #c9ad88; }
+.tea-img.ochre { background-color: #b88a5a; }
+.tea-img.sage { background-color: #aab09a; }
+.tea-img.dune { background-color: #c8b89a; }
+.tea-img.indigo { background-color: #6f7986; }
+.tea-img.terracotta { background-color: #b8755d; }
+.tea-img.shadow { background-color: #3a3a36; }
+.tea-img.bone { background-color: #d8d2c2; }
+.tea-img.charcoal { background-color: #2a2a28; }
+
+.tea-img__caption {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(0,0,0,0.55);
+  padding: 8px 10px;
+  text-transform: lowercase;
+}
+.tea-img.charcoal .tea-img__caption,
+.tea-img.shadow .tea-img__caption,
+.tea-img.indigo .tea-img__caption { color: rgba(255,255,255,0.6); }
+
+/* — Footer — */
+.tea-footer {
+  padding: 64px 56px 32px;
+  border-top: 1px solid var(--line-soft);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.tea-footer h6 {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.tea-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.tea-footer a { color: inherit; text-decoration: none; }
+
+/* — Section spacing — */
+.tea-section { padding: 96px 56px; }
+.tea-section-tight { padding: 64px 56px; }
+
+/* — Divider — */
+.tea-rule { height: 1px; background: var(--line-soft); border: 0; margin: 0; }
+.tea-rule-strong { height: 1px; background: var(--ink); border: 0; }
+
+/* — Cover cards (clickable, hover-animated) — */
+.tea-cover-link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.4s ease;
+  will-change: transform;
+}
+.tea-cover-link img {
+  transition:
+    box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.tea-cover-link:hover {
+  transform: translateY(-10px);
+  z-index: 3;
+}
+.tea-cover-link:hover img {
+  box-shadow: 0 32px 60px -18px rgba(20, 14, 4, 0.45);
+}
+.tea-cover-link--shadow img {
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.35);
+}
+.tea-cover-link:active {
+  transform: translateY(-6px);
+  transition-duration: 0.12s;
+}
+.tea-cover-cta {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.35s ease 0.05s,
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s;
+  pointer-events: none;
+}
+.tea-cover-link:hover .tea-cover-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* A shelf row dims its siblings when one is hovered, so the focused cover
+   leads. Apply by adding .tea-cover-shelf to the flex/grid parent. */
+.tea-cover-shelf:has(.tea-cover-link:hover) .tea-cover-link:not(:hover) {
+  filter: saturate(0.65) opacity(0.7);
+}
+
+/* — Pill — */
+.tea-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
