@@ -114,9 +114,13 @@ const ShopB = () => {
               {/* Price + cart */}
               <div style={{ textAlign:'right' }}>
                 <div style={{ fontFamily:'var(--serif)', fontStyle:'italic', fontSize: 30 }}>$15</div>
-                <button className="tea-btn tea-btn-ghost" style={{ marginTop: 12, padding:'8px 12px', fontSize: 10 }}>
-                  {hovered ? 'View edit →' : 'Add to cart'}
-                </button>
+                <a href={hovered ? `/guide/${c.id}` : (c.gumroad || `/guide/${c.id}`)}
+                   target={hovered ? '_self' : (c.gumroad ? '_blank' : '_self')}
+                   rel="noopener"
+                   className="tea-btn tea-btn-ghost"
+                   style={{ marginTop: 12, padding:'8px 12px', fontSize: 10, textDecoration:'none' }}>
+                  {hovered ? 'View edit →' : 'Buy on Gumroad'}
+                </a>
               </div>
             </article>
           );

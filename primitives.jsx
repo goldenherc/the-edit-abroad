@@ -21,6 +21,13 @@ const Compass = ({ size = 22, color = 'currentColor' }) => (
   </svg>
 );
 
+// Tiny Pinterest 'P' mark — used in nav + footer as a brand link.
+const PinterestIcon = ({ size = 16, color = 'currentColor' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden="true" style={{ flex:'0 0 auto' }}>
+    <path d="M12 0C5.4 0 0 5.4 0 12c0 5 3 9.3 7.4 11.1-.1-.9-.2-2.3 0-3.3.2-.9 1.3-5.8 1.3-5.8s-.4-.7-.4-1.7c0-1.6.9-2.8 2.1-2.8 1 0 1.5.7 1.5 1.6 0 1-.6 2.4-1 3.8-.3 1.1.6 2 1.7 2 2.1 0 3.7-2.2 3.7-5.4 0-2.8-2-4.8-4.9-4.8-3.3 0-5.3 2.5-5.3 5.1 0 1 .4 2.1.9 2.7.1.1.1.2.1.3 0 .3-.2.9-.2 1-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.6 0-3.8 2.7-7.2 7.9-7.2 4.1 0 7.3 3 7.3 6.9 0 4.1-2.6 7.5-6.2 7.5-1.2 0-2.4-.7-2.7-1.4l-.7 2.8c-.3 1-1 2.3-1.5 3 1.1.4 2.3.5 3.5.5 6.6 0 12-5.4 12-12C24 5.4 18.6 0 12 0z"/>
+  </svg>
+);
+
 const Nav = ({ light = false, transparent = false }) => (
   <nav className="tea-nav" style={{
     background: transparent ? 'transparent' : 'var(--bg)',
@@ -33,11 +40,13 @@ const Nav = ({ light = false, transparent = false }) => (
     </a>
     <div className="tea-nav-links" style={{ color: light ? '#fafaf7' : 'var(--ink)' }}>
       <a href="/shop">Shop</a>
-      <a href="/shop">The Edits</a>
-      <a href="#journal">Journal</a>
-      <a href="#about">About</a>
+      <a href="/journal">Journal</a>
+      <a href="/about">About</a>
     </div>
     <div className="tea-nav-utility" style={{ color: light ? 'rgba(250,250,247,0.85)' : 'var(--ink-2)' }}>
+      <a href="https://pinterest.com/theeditabroad" target="_blank" rel="noopener" title="Pinterest" style={{ color:'inherit', textDecoration:'none', display:'inline-flex', alignItems:'center' }}>
+        <PinterestIcon size={15} />
+      </a>
       <span>Search</span>
       <span>Cart (0)</span>
     </div>
@@ -98,18 +107,18 @@ const Footer = () => (
     <div>
       <h6>Shop</h6>
       <ul>
-        <li><a>Every Edit</a></li>
-        <li><a>The Complete Library</a></li>
-        <li><a>Gift cards</a></li>
+        <li><a href="/shop">Every Edit</a></li>
+        <li><a href="/shop">The Complete Library</a></li>
+        <li><a href="/shop">Gift cards</a></li>
       </ul>
     </div>
     <div>
       <h6>Studio</h6>
       <ul>
-        <li><a>About</a></li>
-        <li><a>Journal</a></li>
-        <li><a>Press · Trade</a></li>
-        <li><a>Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/journal">Journal</a></li>
+        <li><a href="https://pinterest.com/theeditabroad" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="mailto:hello@theeditabroad.com">Contact</a></li>
       </ul>
     </div>
     <div>
@@ -140,4 +149,4 @@ const FooterRule = () => (
   </div>
 );
 
-Object.assign(window, { Wordmark, Compass, Nav, CityCover, Img, Footer, FooterRule });
+Object.assign(window, { Wordmark, Compass, PinterestIcon, Nav, CityCover, Img, Footer, FooterRule });

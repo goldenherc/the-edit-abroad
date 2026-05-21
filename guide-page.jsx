@@ -109,9 +109,11 @@ const GuidePage = ({ cityId }) => {
               display:'flex', alignItems:'center', gap: 28, flexWrap:'wrap'
             }}>
               <span style={{ fontFamily:'var(--serif)', fontStyle:'italic', fontSize: 56 }}>$15</span>
-              <button className="tea-btn">Add to cart →</button>
-              <a href={city.pdf} target="_blank" rel="noopener" className="tea-link">
-                Download the {city.short} PDF
+              <a href={city.gumroad || '#'} target="_blank" rel="noopener" className="tea-btn" style={{ textDecoration:'none' }}>
+                Buy on Gumroad →
+              </a>
+              <a href="#" className="tea-link" style={{ borderBottom:'none', color:'var(--ink-3)' }}>
+                Preview a sample
               </a>
             </div>
             <div className="tea-meta" style={{ marginTop: 16, color:'var(--ink-3)' }}>

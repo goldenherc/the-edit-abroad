@@ -1,138 +1,160 @@
-# Deploy The Edit Abroad to Vercel
+# The Edit Abroad — Site Code
 
-This folder is a complete static site. No build step. Just upload to Vercel and point your domain at it.
+A small, real, multi-page website. Hosts on Vercel. Domain stays at Squarespace.
 
----
+## What's in here
 
-## 1 · Deploy to Vercel (5 minutes)
+```
+/                         → Homepage (Direction D)
+/shop                     → Shop / Library catalogue (Direction B)
+/journal                  → Journal (blog listing)
+/about                    → About the studio
+/guide/<city-id>          → Individual product page for any city
+```
 
-You have a Vercel account already, so the fastest path is the drag-and-drop deploy.
+Plus assets:
 
-1. Open https://vercel.com/new
-2. Click **"Browse"** (under the "Import Project" area) — or just drag this entire `deploy` folder onto the page.
-   - **Important:** drag the folder *contents* (all the files at the top level), not the `deploy` folder itself. Vercel needs `index.html` at the project root.
-3. Vercel will detect it as a static site. Give the project a name (e.g. `the-edit-abroad`).
-4. Click **Deploy**.
-5. After ~30 seconds, you'll get a live URL like `the-edit-abroad.vercel.app`. Open it — your homepage should load.
+```
+/covers/<city>.jpg        → Branded product covers
+/guides/<city>.pdf        → The actual PDFs sold to customers (NOT linked publicly — Gumroad delivers)
+/cities.js                → The whole library — add/edit destinations here
+/styles.css               → Shared design tokens (colors, type, hover behavior)
+/primitives.jsx           → Nav, Footer, Compass, Pinterest icon, CityCover (clickable, hover-animated)
+/home-d-cover-index.jsx   → Homepage layout
+/shop-b-library.jsx       → Shop / library catalogue layout
+/journal.jsx              → Journal layout + JOURNAL_POSTS array (edit to add posts)
+/about.jsx                → About page
+/guide-page.jsx           → Per-city product page template
+```
 
-That preview URL works immediately. Your real domain comes next.
-
-> **Optional — CLI method.** If you'd rather use the terminal:
-> ```bash
-> npm i -g vercel
-> cd deploy
-> vercel
-> ```
-> Follow the prompts. Same result.
-
----
-
-## 2 · Point your Squarespace domain at Vercel (10 minutes)
-
-You're keeping `theeditabroad.com` registered at Squarespace and just pointing it at your new Vercel site.
-
-### In Vercel:
-
-1. In your new project, go to **Settings → Domains**.
-2. Type `theeditabroad.com` and click **Add**.
-3. Repeat for `www.theeditabroad.com`.
-4. Vercel will show you DNS records to set up. You'll typically see:
-   - For the root (`theeditabroad.com`): an **A record** → `76.76.21.21`
-   - For `www`: a **CNAME record** → `cname.vercel-dns.com`
-
-Keep that page open — you'll paste those into Squarespace next.
-
-### In Squarespace:
-
-1. Sign in to https://account.squarespace.com
-2. Go to **Settings → Domains** and click your domain `theeditabroad.com`.
-3. Click **DNS Settings** (or **Advanced DNS**).
-4. **Delete any existing A records** for `@` (the root) and any existing CNAME for `www` — these currently point at Squarespace.
-5. Add a new **A record**:
-   - Host: `@`
-   - Type: `A`
-   - Value: `76.76.21.21` (the exact value Vercel showed you)
-6. Add a new **CNAME record**:
-   - Host: `www`
-   - Type: `CNAME`
-   - Value: `cname.vercel-dns.com`
-7. Save.
-
-### Back in Vercel:
-
-After a few minutes, Vercel will detect the new DNS and issue an SSL certificate automatically. You'll see green checkmarks next to both domains in **Settings → Domains**.
-
-Full propagation can take up to 24 hours, but usually works within 15 minutes.
-
-### Done — your site is now live at theeditabroad.com.
+City IDs: `bcn cpt grc haw ibz ldn mar mex par sof ita syd tam tyo`.
 
 ---
 
-## 3 · After it's live: cancel the Squarespace website plan (optional)
+## 1 · Deploy to Vercel  (5 min)
 
-You only need to keep the **domain** at Squarespace, not the website plan.
+1. Go to https://vercel.com/new
+2. Drag the **contents** of this folder onto the page (the files at top level, not the wrapping `deploy` folder).
+3. Click **Deploy**. You'll have a live preview URL in 30 sec.
 
-1. In Squarespace **Settings → Billing & Account**, find your website subscription.
-2. Cancel it — but keep the domain registration (a separate, much cheaper line item, ~$20/yr).
-
-Your domain stays at Squarespace; your site is hosted free on Vercel.
-
----
-
-## 4 · Selling the PDFs
-
-This deploy is a **front-end site only** — it doesn't have checkout. You'll need to add a way for customers to pay $15 and receive the PDF. Three good options:
-
-**a) Stripe Payment Links** (fastest)
-- Create one Payment Link per city in Stripe.
-- Set the link as a **digital good** and upload the PDF — Stripe handles delivery after payment.
-- Replace the `Add to cart` button's behavior with the appropriate Stripe Payment Link URL per city.
-
-**b) Lemon Squeezy** (best for global tax)
-- Same idea but Lemon Squeezy auto-handles VAT/sales tax for international customers.
-- Each city becomes a product; "Buy" buttons link to the product's Lemon Squeezy URL.
-
-**c) Gumroad** (cheapest)
-- List each city as a Gumroad product.
-- "Buy" buttons link to the Gumroad URL.
-- Gumroad takes a small percentage per sale instead of a monthly fee.
-
-To wire any of these in, replace the placeholder `Add to cart` `<button>` in `home-d-cover-index.jsx`, `shop-b-library.jsx`, and `guide-page.jsx` with an `<a href="...">` to the appropriate Payment/Product URL.
+Or via CLI:
+```bash
+npm i -g vercel
+cd deploy
+vercel
+```
 
 ---
 
-## 5 · Updating the site later
+## 2 · Connect your Squarespace domain  (10 min)
 
-To add a new city:
+You're keeping `theeditabroad.com` registered at Squarespace and just pointing the DNS at Vercel.
 
-1. Drop the new cover into `/covers/`
-2. Drop the new PDF into `/guides/`
-3. Add a new entry to the array in `/cities.js`
-4. Push to Vercel (re-deploy by drag-and-drop, or `vercel --prod` from the terminal)
+**In Vercel:** Project → Settings → Domains → add `theeditabroad.com` and `www.theeditabroad.com`. Vercel will tell you exactly what DNS records to set.
 
-Everything else — homepage shelves, shop catalogue, individual product pages — picks up the new city automatically.
+**In Squarespace:** Settings → Domains → your domain → **DNS Settings**.
+
+- Delete existing A records for `@` (root).
+- Add a new **A record**: host `@`, value `76.76.21.21`.
+- Add a **CNAME record**: host `www`, value `cname.vercel-dns.com`.
+- Save.
+
+Vercel auto-issues SSL. Live within ~15 minutes (up to 24 hours worst case).
+
+After it works: cancel the Squarespace **website** subscription. Keep just the **domain** (~$20/yr line item).
+
+---
+
+## 3 · Connect Gumroad  (15 min)
+
+This is how you actually sell. Every "Buy" button on the site points at a Gumroad product URL.
+
+### One-time Gumroad setup:
+
+1. Sign in at https://gumroad.com.
+2. For each city, create a **product**: type "Digital product", title `The Edit Abroad — Marrakech`, price `$15`, upload `marrakech.pdf` from `/guides/`.
+3. Publish the product. Gumroad gives you a URL like `https://shanedunn.gumroad.com/l/marrakech`. Copy it.
+4. Repeat for all 14 cities.
+5. (Optional) Create a 15th "Complete Library" product priced at the bundle amount with all 14 PDFs.
+
+### Wire each URL into the site:
+
+Open `cities.js` and paste each Gumroad URL into the matching city's `gumroad: ''` slot:
+
+```js
+{ id:'mar', name:'Marrakech', …,  gumroad: 'https://shanedunn.gumroad.com/l/marrakech', …, intro:'…' },
+```
+
+Save, push to Vercel, done. Every "Buy on Gumroad" button on the homepage shelves, the shop catalogue, and the individual product pages now goes to the right Gumroad product.
+
+> **Tip:** Gumroad supports custom domains and a "Gumroad Overlay" — a small modal checkout that opens on top of your site instead of redirecting. You can switch to that any time without changing your URLs in `cities.js`. See https://help.gumroad.com.
+
+---
+
+## 4 · Update content
+
+### Add or remove a city
+
+1. Drop the cover into `/covers/`, the PDF into `/guides/`.
+2. Add a new entry to the array in `/cities.js`.
+3. Set the Gumroad URL.
+4. Re-deploy.
+
+Everything else — homepage shelves, shop catalogue, individual product page, "Other Edits" carousel — picks it up automatically.
+
+### Add a journal entry
+
+Open `/journal.jsx` and prepend a new entry to the `JOURNAL_POSTS` array:
+
+```js
+{
+  slug: 'new-post-slug',
+  title: 'The title of the piece',
+  date: '20 May 2026',
+  category: 'Wardrobe',     // Wardrobe, Packing, Field notes, Process, Reading
+  tone: 'dune',             // dune / bone / sage / warm / indigo / ochre / cool / terracotta
+  excerpt: 'A couple of sentences shown on the listing card.',
+  readMin: 5,
+},
+```
+
+The post listing card renders automatically. Clicking it currently goes to `/journal/<slug>` — that route isn't wired yet. Either add a `journal-post.html` template later, or point the `href` to a Substack/Medium URL for now.
+
+### Update the editor bio / about page
+
+Open `/about.jsx` and edit the Manifesto, Editor, Method, or Contact blocks.
+
+### Pinterest
+
+The Pinterest link currently points at `https://pinterest.com/theeditabroad` — change in `/primitives.jsx` if your account handle differs. Two places: in `Nav` and in `Footer`.
+
+---
+
+## 5 · What makes this "a real website" vs. just an HTML page
+
+You already have most of it. Here's the punchlist:
+
+- [x] Multiple linked pages (home, shop, journal, about, 14 product pages)
+- [x] Real navigation between them (`<a>` tags wired in the Nav and Footer)
+- [x] Pretty URLs (`/shop`, `/guide/marrakech`) via Vercel rewrites
+- [x] Per-page `<title>` and `<meta description>` for SEO
+- [x] Real product covers, real PDFs, real intros per city
+- [x] Pinterest brand link in nav + footer
+- [x] Cart wired to a real checkout (Gumroad)
+- [x] Dynamic pricing (bundle auto-calculates from library size)
+- [ ] **Add Google Search Console** — verify your domain so it shows up in search. Free; takes 5 min at https://search.google.com/search-console.
+- [ ] **Add analytics** — Vercel's built-in analytics is free for the first 2.5k events/month. Plausible / Fathom are nicer if you want privacy-respecting third-party.
+- [ ] **Add a `sitemap.xml` and `robots.txt`** — helps search engines crawl. (One-page snippets; I can generate these on request.)
+- [ ] **Add Open Graph images** — for nice link previews when shared on Pinterest, iMessage, etc. (One image per shareable page.)
+- [ ] **Add a 404 page** — when someone mistypes a URL. Vercel falls back to a default if you don't have one.
+- [ ] **Replace journal photo placeholders** with real photographs.
+
+If you want, drop me a note and I'll add any of those four checkbox items in one go.
 
 ---
 
 ## Troubleshooting
 
-- **Page loads blank?** Open the browser DevTools → Console. The most common issue is a network error loading a `.jsx` file — check that all files made it to Vercel.
-- **DNS not working after 24 hours?** Verify the exact A record value in Vercel; some Squarespace DNS panels add trailing dots or auto-format the value. The A record should be exactly `76.76.21.21` with nothing else.
-- **Want pretty URLs like `/guide/marrakech` instead of `/guide.html?city=marrakech`?** Already handled — `vercel.json` rewrites take care of it.
-
----
-
-## File map
-
-```
-/                          → renders Home (Direction D)
-/shop                      → renders Shop (Direction B, library catalogue)
-/guide/<city-id>           → individual product page (e.g. /guide/marrakech)
-/covers/<city>.jpg         → branded product covers
-/guides/<city>.pdf         → the actual deliverable PDFs
-/cities.js                 → all destinations + metadata (edit this to add cities)
-/styles.css                → design tokens
-/*.jsx                     → React components
-```
-
-City IDs are: `bcn cpt grc haw ibz ldn mar mex par sof ita syd tam tyo`.
+- **Page loads blank** — open DevTools → Console. Usually a `.jsx` file failed to load; check it made it to Vercel.
+- **DNS not propagating** — verify A record value in Vercel is exactly `76.76.21.21` (no trailing dot).
+- **Gumroad button does nothing** — `cities.js` likely has an empty `gumroad: ''`. Paste in the product URL.
