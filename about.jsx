@@ -1,20 +1,20 @@
-// About â the studio / brand story / editor / method / press.
+// About — the studio / brand story / editor / method / press.
 
 const About = () => (
   <div className="tea-page" style={{ width: '100%' }}>
     <Nav />
 
-    {/* â HERO ââââââââââââââââââââââââââââ */}
+    {/* — HERO ———————————————————————————— */}
     <section style={{ padding:'88px 56px 40px' }}>
       <div className="tea-eyebrow" style={{ marginBottom: 26, color:'var(--gold)' }}>
-        â The Studio  Â·  Established 2024
+        Ã¢ÂÂ The Studio  ÃÂ·  Established 2024
       </div>
       <div className="tea-display" style={{ fontSize: 160, letterSpacing:'-0.03em' }}>
         About.
       </div>
     </section>
 
-    {/* â MANIFESTO âââââââââââââââââââââââ */}
+    {/* — MANIFESTO ——————————————————————— */}
     <section style={{ padding:'56px 56px 96px', borderTop:'1px solid var(--ink)' }}>
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1.4fr', gap: 96 }}>
         <div className="tea-display" style={{ fontSize: 72 }}>
@@ -22,10 +22,10 @@ const About = () => (
         </div>
         <div>
           <p className="tea-body" style={{ marginTop: 0, fontSize: 19 }}>
-            The Edit Abroad is a small library of luxury packing guides for travelers who'd rather know the right four restaurants than the trending forty â and who'd rather pack one perfect linen suit than three almost-rights.
+            The Edit Abroad is a small library of luxury packing guides for travelers who'd rather know the right four restaurants than the trending forty — and who'd rather pack one perfect linen suit than three almost-rights.
           </p>
           <p className="tea-body" style={{ fontSize: 19 }}>
-            Each Edit is a single document â researched over years of returning â that opens on your phone the morning you land. It tells you what to put in your bag, where to stay, and where to be at four o'clock on Tuesday.
+            Each Edit is a single document — researched over years of returning — that opens on your phone the morning you land. It tells you what to put in your bag, where to stay, and where to be at four o'clock on Tuesday.
           </p>
           <p className="tea-body" style={{ fontSize: 19 }}>
             No affiliate links. No sponsored placements. No twenty-best-of lists.
@@ -34,39 +34,39 @@ const About = () => (
       </div>
     </section>
 
-    {/* â EDITOR ââââââââââââââââââââââââââ */}
+    {/* — EDITOR —————————————————————————— */}
     <section style={{
       padding:'112px 56px', background:'var(--bg-2)',
       display:'grid', gridTemplateColumns:'1fr 1fr', gap: 96, alignItems:'center'
     }}>
-      <Img tone="bone" caption="editor on assignment â replace with shane's portrait" style={{ aspectRatio:'4/5' }} />
+      <Img tone="bone" caption="editor on assignment — replace with shane's portrait" style={{ aspectRatio:'4/5' }} />
       <div>
         <div className="tea-eyebrow" style={{ marginBottom: 24 }}>The Editor</div>
         <div className="tea-display" style={{ fontSize: 80, marginBottom: 28 }}>
           Shane Dunn.
         </div>
         <p className="tea-body" style={{ fontSize: 18 }}>
-          Shane splits his time between Kona, Southern California, France, Greece, and Australia — equal parts ocean kid and amateur sommelier. He's spent the better part of a decade learning what to put in a bag for a ferry, a long-haul, and a six-week trip you didn't plan. The Edit Abroad collects those answers â the way he'd actually send them to a friend.
+          Shane splits his time between Kona, Southern California, France, Greece, and Australia â equal parts ocean kid and amateur sommelier. He's spent the better part of a decade learning what to put in a bag for a ferry, a long-haul, and a six-week trip you didn't plan. The Edit Abroad collects those answers — the way he'd actually send them to a friend.
         </p>
         <div style={{
           marginTop: 32, display:'flex', gap: 28,
           fontFamily:'var(--sans)', fontSize: 11, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--ink-3)'
         }}>
           <span>Editor</span>
-          <span style={{ color:'var(--mute)' }}>Â·</span>
+          <span style={{ color:'var(--mute)' }}>ÃÂ·</span>
           <span>Writer</span>
-          <span style={{ color:'var(--mute)' }}>Â·</span>
-          <span>Kona · So. Cal · France · Greece · Australia</span>
+          <span style={{ color:'var(--mute)' }}>ÃÂ·</span>
+          <span>Kona Â· So. Cal Â· France Â· Greece Â· Australia</span>
         </div>
       </div>
     </section>
 
-    {/* â METHOD ââââââââââââââââââââââââââ */}
+    {/* — METHOD —————————————————————————— */}
     <section className="tea-section">
       <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom: 48 }}>
         <div className="tea-eyebrow">The Method</div>
         <div className="tea-display" style={{ fontSize: 56, maxWidth: 720, textAlign:'right' }}>
-          Three trips, two locals, one editor â before anything makes it into the bag.
+          Three trips, two locals, one editor — before anything makes it into the bag.
         </div>
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap: 32 }}>
@@ -85,9 +85,9 @@ const About = () => (
       </div>
     </section>
 
-    {/* â PRESS / TRADE âââââââââââââââââââââ */}
+    {/* — PRESS / TRADE ————————————————————— */}
     <section style={{ padding:'80px 56px', borderTop:'1px solid var(--line-soft)', borderBottom:'1px solid var(--line-soft)' }}>
-      <div className="tea-eyebrow" style={{ marginBottom: 36 }}>Press Â· Trade</div>
+      <div className="tea-eyebrow" style={{ marginBottom: 36 }}>Press ÃÂ· Trade</div>
       <div style={{
         display:'grid', gridTemplateColumns:'repeat(5, 1fr)', gap: 48, alignItems:'center'
       }}>
@@ -102,7 +102,7 @@ const About = () => (
       </div>
     </section>
 
-    {/* â CONTACT ââââââââââââââââââââââââââ */}
+    {/* — CONTACT —————————————————————————— */}
     <section className="tea-section" style={{
       display:'grid', gridTemplateColumns:'1fr 1.4fr', gap: 96
     }}>
