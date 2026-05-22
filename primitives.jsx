@@ -7,7 +7,7 @@ const Wordmark = ({ size = 18, light = false }) => (
   </span>
 );
 
-// Tiny gold compass — a subtle nod to the brand mark from the covers.
+// Tiny gold compass â a subtle nod to the brand mark from the covers.
 const Compass = ({ size = 22, color = 'currentColor' }) => (
   <svg width={size} height={size} viewBox="0 0 32 32" fill="none" stroke={color} strokeWidth="1" style={{ flex:'0 0 auto' }}>
     <circle cx="16" cy="16" r="13.5" />
@@ -21,7 +21,7 @@ const Compass = ({ size = 22, color = 'currentColor' }) => (
   </svg>
 );
 
-// Tiny Pinterest 'P' mark — used in nav + footer as a brand link.
+// Tiny Pinterest 'P' mark â used in nav + footer as a brand link.
 const PinterestIcon = ({ size = 16, color = 'currentColor' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill={color} aria-hidden="true" style={{ flex:'0 0 auto' }}>
     <path d="M12 0C5.4 0 0 5.4 0 12c0 5 3 9.3 7.4 11.1-.1-.9-.2-2.3 0-3.3.2-.9 1.3-5.8 1.3-5.8s-.4-.7-.4-1.7c0-1.6.9-2.8 2.1-2.8 1 0 1.5.7 1.5 1.6 0 1-.6 2.4-1 3.8-.3 1.1.6 2 1.7 2 2.1 0 3.7-2.2 3.7-5.4 0-2.8-2-4.8-4.9-4.8-3.3 0-5.3 2.5-5.3 5.1 0 1 .4 2.1.9 2.7.1.1.1.2.1.3 0 .3-.2.9-.2 1-.1.2-.2.3-.4.2-1.5-.7-2.4-2.9-2.4-4.6 0-3.8 2.7-7.2 7.9-7.2 4.1 0 7.3 3 7.3 6.9 0 4.1-2.6 7.5-6.2 7.5-1.2 0-2.4-.7-2.7-1.4l-.7 2.8c-.3 1-1 2.3-1.5 3 1.1.4 2.3.5 3.5.5 6.6 0 12-5.4 12-12C24 5.4 18.6 0 12 0z"/>
@@ -53,14 +53,14 @@ const Nav = ({ light = false, transparent = false }) => (
   </nav>
 );
 
-// CityCover — renders a city's branded product cover as a clickable card.
+// CityCover â renders a city's branded product cover as a clickable card.
 // Hovering lifts the cover and ramps shadow; clicking opens that city's
 // individual Edit page. Pass `link={false}` to render as a static image only.
 const CityCover = ({ city, style = {}, shadow = false, frame = false, link = true, showCta = false }) => {
   const img = (
     <img
-      src={city.cover}
-      alt={`The Edit Abroad — ${city.name} luxury packing guide`}
+      src={'/' + city.cover}
+      alt={`The Edit Abroad â ${city.name} luxury packing guide`}
       style={{
         display:'block', width:'100%', aspectRatio:'1/1', objectFit:'cover',
         boxShadow: shadow ? '0 24px 60px -20px rgba(0,0,0,0.35)' : 'none',
@@ -76,7 +76,7 @@ const CityCover = ({ city, style = {}, shadow = false, frame = false, link = tru
       {showCta && (
         <span className="tea-cover-cta">
           <span>Open the {city.short} Edit</span>
-          <span aria-hidden="true">→</span>
+          <span aria-hidden="true">â</span>
         </span>
       )}
     </a>
@@ -101,7 +101,7 @@ const Footer = () => (
         </div>
       </div>
       <p style={{ fontFamily:'var(--serif-body)', fontSize: 15, lineHeight: 1.55, color:'var(--ink-2)', maxWidth: 380, margin: 0 }}>
-        A small library of luxury packing guides — what to take, where to stay, how to move through the world's most considered cities.
+        A small library of luxury packing guides â what to take, where to stay, how to move through the world's most considered cities.
       </p>
     </div>
     <div>
@@ -131,7 +131,7 @@ const Footer = () => (
           flex:1, border:0, background:'transparent', outline:'none',
           fontFamily:'var(--sans)', fontSize: 12, letterSpacing:'0.05em', color:'var(--ink)'
         }} />
-        <span style={{ fontSize: 10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink)' }}>Submit →</span>
+        <span style={{ fontSize: 10, letterSpacing:'0.22em', textTransform:'uppercase', color:'var(--ink)' }}>Submit â</span>
       </div>
     </div>
   </footer>
@@ -143,9 +143,9 @@ const FooterRule = () => (
     fontFamily:'var(--sans)', fontSize: 10, letterSpacing:'0.18em', textTransform:'uppercase',
     color:'var(--ink-3)', borderTop:'1px solid var(--line-soft)'
   }}>
-    <span>© 2026 The Edit Abroad</span>
+    <span>Â© 2026 The Edit Abroad</span>
     <span>theeditabroad.com</span>
-    <span>Terms · Privacy</span>
+    <span>Terms Â· Privacy</span>
   </div>
 );
 
