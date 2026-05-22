@@ -1,4 +1,4 @@
-// Shop B — Library Index
+// Shop B â Library Index
 // Quiet, library-catalogue feel. Each guide as a long row with a small
 // branded cover thumbnail, lots of metadata. One row mock-hovered.
 
@@ -16,10 +16,10 @@ const ShopB = () => {
     <div className="tea-page" style={{ width: '100%' }}>
       <Nav />
 
-      {/* — TITLE BAR —————————————————————— */}
+      {/* â TITLE BAR ââââââââââââââââââââââ */}
       <section style={{ padding:'72px 56px 40px' }}>
         <div className="tea-eyebrow" style={{ marginBottom: 26, color:'var(--gold)' }}>
-          The Catalogue  ·  Updated 18 May 2026
+          The Catalogue  Â·  Updated 18 May 2026
         </div>
         <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between' }}>
           <div style={{ fontFamily:'var(--serif)', fontSize: 120, fontWeight: 400, letterSpacing:'-0.02em' }}>
@@ -31,7 +31,7 @@ const ShopB = () => {
         </div>
       </section>
 
-      {/* — TOOLBAR ———————————————————————— */}
+      {/* â TOOLBAR ââââââââââââââââââââââââ */}
       <section style={{
         padding:'14px 56px', borderTop:'1px solid var(--ink)', borderBottom:'1px solid var(--line-soft)',
         display:'flex', justifyContent:'space-between', alignItems:'center'
@@ -46,23 +46,23 @@ const ShopB = () => {
           display:'flex', alignItems:'center', gap: 12,
           borderBottom:'1px solid var(--ink)', paddingBottom: 6, width: 340
         }}>
-          <span style={{ fontFamily:'var(--sans)', fontSize: 11, color:'var(--ink-3)', letterSpacing:'0.08em' }}>↗</span>
-          <input placeholder="Search the library — city, season, mood…" style={{
+          <span style={{ fontFamily:'var(--sans)', fontSize: 11, color:'var(--ink-3)', letterSpacing:'0.08em' }}>â</span>
+          <input placeholder="Search the library â city, season, moodâ¦" style={{
             flex: 1, border: 0, background:'transparent', outline:'none',
             fontFamily:'var(--serif-body)', fontSize: 15, fontStyle:'italic', color:'var(--ink-2)'
           }} />
         </div>
         <div style={{ display:'flex', gap: 22 }}>
-          <span className="tea-label">Sort  A → Z</span>
+          <span className="tea-label">Sort  A â Z</span>
         </div>
       </section>
 
-      {/* — LIST ——————————————————————————— */}
+      {/* â LIST âââââââââââââââââââââââââââ */}
       <section style={{ padding:'0 56px' }}>
         {cities.map((c, i) => {
           const hovered = c.id === 'mar';
           return (
-            <article key={c.id} style={{
+            <article key={c.id} onClick={() => { window.location.href = '/guide/' + c.id; }} style={{ cursor:'pointer',
               display:'grid',
               gridTemplateColumns:'72px 1.2fr 1fr 1fr 96px 90px',
               alignItems:'center', gap: 28,
@@ -119,7 +119,7 @@ const ShopB = () => {
                    rel="noopener"
                    className="tea-btn tea-btn-ghost"
                    style={{ marginTop: 12, padding:'8px 12px', fontSize: 10, textDecoration:'none' }}>
-                  {hovered ? 'View edit →' : 'Buy on Gumroad'}
+                  {hovered ? 'View edit â' : 'Buy on Gumroad'}
                 </a>
               </div>
             </article>
@@ -139,11 +139,11 @@ const ShopB = () => {
               Lisbon
             </div>
             <div className="tea-body" style={{ fontSize: 13, marginTop: 8 }}>
-              Currently in edit — expected late 2026.
+              Currently in edit â expected late 2026.
             </div>
           </div>
           <div className="tea-body" style={{ fontSize: 15 }}>Portugal</div>
-          <div className="tea-body" style={{ fontSize: 15 }}>April – June</div>
+          <div className="tea-body" style={{ fontSize: 15 }}>April â June</div>
           <div style={{
             width: 96, aspectRatio:'1/1',
             border:'1px dashed var(--line)',
@@ -157,7 +157,7 @@ const ShopB = () => {
         </article>
       </section>
 
-      {/* — BUNDLE PROMPT ————————————————————— */}
+      {/* â BUNDLE PROMPT âââââââââââââââââââââ */}
       <section style={{ padding:'80px 56px' }}>
         <div style={{
           border:'1px solid var(--ink)', padding:'48px 56px',
