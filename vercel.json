@@ -2,7 +2,7 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
-          { "source": "/guide/:city", "destination": "/guide.html" },
-          { "source": "/journal/:slug", "destination": "/journal.html" }
+          { "source": "/guide/:city", "destination": "/guide?city=:city" },
+          { "source": "/journal/:slug", "destination": "/journal?slug=:slug" }
     ]
 }
