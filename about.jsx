@@ -7,7 +7,7 @@ const About = () => (
     {/* — HERO ———————————————————————————— */}
     <section style={{ padding:'88px 56px 40px' }}>
       <div className="tea-eyebrow" style={{ marginBottom: 26, color:'var(--gold)' }}>
-        Ã¢ÂÂ The Studio  ÃÂ·  Established 2024
+        — The Studio  ·  Established 2024
       </div>
       <div className="tea-display" style={{ fontSize: 160, letterSpacing:'-0.03em' }}>
         About.
@@ -46,17 +46,17 @@ const About = () => (
           Shane Dunn.
         </div>
         <p className="tea-body" style={{ fontSize: 18 }}>
-          Shane splits his time between Kona, Southern California, France, Greece, and Australia â equal parts ocean kid and amateur sommelier. He's spent the better part of a decade learning what to put in a bag for a ferry, a long-haul, and a six-week trip you didn't plan. The Edit Abroad collects those answers — the way he'd actually send them to a friend.
+          Shane splits his time between Kona, Southern California, France, Greece, and Australia — equal parts ocean kid and amateur sommelier. He's spent the better part of a decade learning what to put in a bag for a ferry, a long-haul, and a six-week trip you didn't plan. The Edit Abroad collects those answers — the way he'd actually send them to a friend.
         </p>
         <div style={{
           marginTop: 32, display:'flex', gap: 28,
           fontFamily:'var(--sans)', fontSize: 11, letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--ink-3)'
         }}>
           <span>Editor</span>
-          <span style={{ color:'var(--mute)' }}>ÃÂ·</span>
+          <span style={{ color:'var(--mute)' }}>·</span>
           <span>Writer</span>
-          <span style={{ color:'var(--mute)' }}>ÃÂ·</span>
-          <span>Kona Â· So. Cal Â· France Â· Greece Â· Australia</span>
+          <span style={{ color:'var(--mute)' }}>·</span>
+          <span>Kona · So. Cal · France · Greece · Australia</span>
         </div>
       </div>
     </section>
@@ -87,7 +87,7 @@ const About = () => (
 
     {/* — PRESS / TRADE ————————————————————— */}
     <section style={{ padding:'80px 56px', borderTop:'1px solid var(--line-soft)', borderBottom:'1px solid var(--line-soft)' }}>
-      <div className="tea-eyebrow" style={{ marginBottom: 36 }}>Press ÃÂ· Trade</div>
+      <div className="tea-eyebrow" style={{ marginBottom: 36 }}>Press · Trade</div>
       <div style={{
         display:'grid', gridTemplateColumns:'repeat(5, 1fr)', gap: 48, alignItems:'center'
       }}>
